@@ -65,6 +65,10 @@ func main() {
 
 	//发送文件名给接收端
 	n,err := conn.Write([]byte(fileName))
+	if err != nil{
+		fmt.Println("conn.Write err:",err)
+		return
+	}
 
 	//读取服务器回发的 OK
 	buf := make([]byte,16)
