@@ -64,7 +64,7 @@ func (c *Connection)StartReader() {
 func (c *Connection) Start() {
 	fmt.Println("Conn Start()... ConnID = ",c.ConnID)
 	//启动从当前连接的读数据业务
-
+	go c.StartReader()
 	//TODO 启动从当前连接写数据的业务
 }
 //停止连接 结束当前连接的工作
